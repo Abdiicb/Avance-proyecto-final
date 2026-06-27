@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Florería Barraza</title>
+<style>
+
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f9f6f0;
+color: #333;
+}
+
+
+header {
+background-color: #2d5a27; 
+color: white;
+padding: 20px;
+text-align: center;
+}
+
+h1 {
+margin: 0;
+font-size: 3rem;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+p.slogan {
+font-style: italic;
+font-size: 1.2rem;
+margin-top: 5px;
+color: #e2f0d9;
+}
+
+/* Contenedor Principal */
+.container {
+max-width: 1000px;
+margin: 30px auto;
+padding: 20px;
+background: white;
+box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+border-radius: 8px;
+}
+
+section {
+margin-bottom: 40px;
+}
+
+h2 {
+color: #2d5a27;
+border-bottom: 2px solid #e2f0d9;
+padding-bottom: 10px;
+}
+
+
+.galeria {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+margin-top: 20px;
+}
+
+.flor-card {
+background: #fff;
+border: 1px solid #eee;
+border-radius: 8px;
+overflow: hidden;
+text-align: center;
+box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.flor-card img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+}
+
+.flor-card p {
+padding: 10px;
+font-weight: bold;
+}
+
+footer {
+background-color: #2d5a27;
+color: white;
+text-align: center;
+padding: 15px;
+margin-top: 50px;
+font-size: 0.9rem;
+}
+</style>
+
+
+</head>
+
+<script>
+  alert("Bienvenido a Floreria Barraza");
+</script>
+
+
+<body>
+
+<header>
+<h1>Florería Barraza</h1>
+<p class="slogan">Flores frescas para momentos inolvidables</p>
+</header>
+
+<div class="container">
+
+<section>
+<h2>Bienvenidos</h2>
+<p>Somos Florería Barraza, un lugar donde las flores se convierten en emociones y cada arreglo esta hecho con dedicación, creatividad y amor.</p>
+<p>Nuestras redes:</p>
+<ul>
+    <li><a href="https://www.facebook.com/share/14eVfV3PYvv/?mibextid=wwXIfr" target="_blank">Facebook</a></li>
+</ul>
+
+<p>Vísitanos:</p>
+<ul>
+    <p><li>Ignacio Mariscal 248-450 local 1 y 51 Col. Centro CD. Juárez, Chihuahua</li></p>
+    <li><a href="https://maps.app.goo.gl/JifTJKFRQwm7mqSu8?g_st=ic" target="_blank">Ubicación Google Maps</a></li>
+</ul>
+</section>
+
+<p>Revisa nuestro catalogo por WhatsApp:</p>
+<ul>
+    <li><a href="https://wa.me/c/5216563010411" target="_blank">Catalogo WhatsApp</a></li>
+</ul>
+<p>¡Cotiza tu pedido!</p>
+  <form id="pedidoForm">
+    <input name="nombre" placeholder="Tu nombre" required>
+    <input name="telefono" placeholder="Teléfono" required>
+    <select name="ramo">
+      <option value="">Selecciona tipo de arreglo (opcional)</option>
+      <option value="Arreglos y coronas de condolencias">Arreglos y coronas de condolencias</option>
+      <option value="Arreglos para bodas, novias y XV años">Arreglos para bodas, novias y XV años</option>
+      <option value="Arreglos para regalo y centros de mesa">Arreglos para regalo y centros de mesa</option>
+      <option value="Arreglos para iglesia">Arreglos para iglesia</option>
+    </select>
+    <textarea name="mensaje" placeholder="Mensaje / detalles" required></textarea>
+    <button type="submit">Enviar por WhatsApp</button>
+  </form>
+  <script>
+    document.getElementById('pedidoForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const f = e.target;
+      const nombre = f.nombre.value.trim();
+      const telefono = f.telefono.value.trim();
+      const ramo = f.ramo.value;
+      const mensaje = f.mensaje.value.trim();
+      if (!nombre || !telefono || !mensaje) { alert('Completa nombre, teléfono y mensaje'); return; }
+
+      let texto = 'Nuevo pedido desde la web%0A';
+      texto += 'Nombre: ' + encodeURIComponent(nombre) + '%0A';
+      texto += 'Teléfono: ' + encodeURIComponent(telefono) + '%0A';
+      if (ramo) texto += 'Categoría: ' + encodeURIComponent(ramo) + '%0A';
+      texto += 'Detalles: ' + encodeURIComponent(mensaje);
+
+      const phone = '526563010411'; 
+      location.href = 'https://wa.me/' + phone + '?text=' + texto;
+    });
+  </script>
+</section>
+
+<section>
+<h2>Nuestras Flores</h2>
+<p>Conoce algunos de nuestros tipos de ramos que tenemos listos para ofrecerte</p>
+
+<div class="galeria">
+<div class="flor-card">
+<img src="https://i.postimg.cc/c1R9wv2f/Floresamarillas.jpg" alt="Flores amarillas">
+<p>Rosas amarillas</p>
+</div>
+<div class="flor-card">
+<img src="https://i.postimg.cc/mkjyqHGF/Girasoles.jpg" alt="Girasoles">
+<p>Girasoles</p>
+</div>
+<div class="flor-card">
+<img src="https://i.postimg.cc/KzrPkMjD/Rosasrojas.jpg" alt="Rosas rojas">
+<p>Rosas rojas</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Conócenos</h2>
+<div class="galeria">
+
+<div class="flor-card">
+<img src="https://i.postimg.cc/44bMxN9y/1bc4ef64-2927-49ad-8b4b-209cdc874477.jpg" alt="rosas rojas y rosas">
+<p>Rosas rojas y rosas</p>
+</div>
+
+<div class="flor-card">
+<img src="https://i.postimg.cc/Pfzc5rww/668ea434-ca39-45a2-9019-7956257198bc.jpg" alt="rosas y girasoles">
+<p>Tulipanes</p>
+</div>
+
+<div class="flor-card">
+<img src="https://i.postimg.cc/mZNqg2HF/dbc6f35a-9cc6-464c-ac8a-280b3d434fd1.jpg" alt="rosas y nubes">
+<p>Rosas y nubes</p>
+</div>
+
+</div>
+</section>
+<footer>
+<p> 2026 Florería Barraza - Todos los derechos reservados.</p>
+<p>Ciudad Juárez, Chihuahua, México</p>
+</footer>
+
+
+
+
+</body>
+</html>
